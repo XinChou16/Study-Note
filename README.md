@@ -10,5 +10,5 @@ description: 链接集合
 ## 前端工具
 
 ### Git
-教程：[慕课网](http://www.imooc.com/learn/208),
-git命令 [阮一峰博客git命令](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
+- 教程：[慕课网](http://www.imooc.com/learn/208),
+- git命令 [阮一峰博客git命令](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
