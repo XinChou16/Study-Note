@@ -127,15 +127,46 @@ var arr = [3,2,1]
 func.call(arr,1) // [2, 1]
 
 
-function Preson(name, age) {
-  this.name = name;
-  this.age = age;
+/**
+ * 实现一个create函数，模拟原生的new操作符。
+ * @param {*obj} construct 
+ */
+function create(construct) {
+    var args = [].slice.call(arguments, 1);
+    // 1.新建一个空对象
+    var obj = {};
+
+    // 2.将对象的原型设置为空对象
+    Object.setPrototypeOf(obj, construct.prototype);
+    // obj._proto_ = construct;
+
+    // 3.将this指向空对象
+    var res = construct.apply(obj, args)
+    if (typeof res === "object" && res !== null) {
+        return res;
+      }
+    // 4.返回这个新建的空对象
+    return obj;
 }
+
+// Test1
+function Person(name) {
+    this.name = name;
+}
+Person.prototype = {
+    age: 23
+}
+var p1 = create(Person, 'xinxin')
+p1;
+// Test2
+function Preson(name, age) {
+    this.name = name;
+    this.age = age;
+  }
 Preson.prototype = {
-  protype: "type"
+    protype: "type"
 }
 var test = create(Preson, "adam", 19);
 console.log(test); //{name:"adam",age:19};
 console.log(test.protype) //type
-
 
