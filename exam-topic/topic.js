@@ -127,16 +127,15 @@ var arr = [3,2,1]
 func.call(arr,1) // [2, 1]
 
 
-
-
-
-
-
-
-
-
-
-
-
+function Preson(name, age) {
+  this.name = name;
+  this.age = age;
+}
+Preson.prototype = {
+  protype: "type"
+}
+var test = create(Preson, "adam", 19);
+console.log(test); //{name:"adam",age:19};
+console.log(test.protype) //type
 
 
