@@ -170,3 +170,110 @@ var test = create(Preson, "adam", 19);
 console.log(test); //{name:"adam",age:19};
 console.log(test.protype) //type
 
+
+
+/**
+ * 2018年1月11日 19:59:21
+ */
+// 写一个函数 isEmptyObject，判断一个对象是不是空对象 
+function isEmptyObject(obj){
+  // todo...
+}
+isEmptyObject( {} ); //true
+isEmptyObject( {a:1} ) ; //false 
+
+// 如果可以用 ES5，那么你会如何写这个函数？ 
+
+// ES5
+function isEmptyObject(obj) {
+    for( key in obj) {
+        if(obj.hasOwnProperty(key) && obj[key] != undefined) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// ES6
+function isEmptyObject(obj) {
+    return Object.keys(obj).length === 0;
+}
+
+isEmptyObject( {} ); //true
+isEmptyObject( {a:1} ) ; //false 
+
+// JS字符串操作相关问题
+// 请用JavaScript 实现一个方法，该方法能够判断两个字符串是否匹配, 
+
+function isMatch(str1, str2) {
+    return str1.split('').sort().join('') === str1.split('').sort().join('');
+}
+
+isMatch('something', 'ginhtemos')  // true
+isMatch('aaa', 'aa')  //false
+isMatch('abb', 'baa')  //false
+isMatch('hello', 'olelh')  //true
+
+
+// JS引用类型相关问题
+function swap(x, y){
+    var temp = x;
+    x = y;
+    y = temp;  
+}
+
+var a = 1
+var b = 2
+swap(a, b)
+console.log(a) //输出什么 -> 1
+console.log(b) //输出什么 -> 2
+
+var obj1 = {name: 'xinxin'}
+var obj2 = {age: 24}
+swap(obj1, obj2)
+console.log(obj1)  //输出什么
+console.log(obj2)  //输出什么
+
+
+// JS运算符typeof相关问题
+
+var str = new String("Hello");
+	
+var result = typeof(str instanceof String);
+alert(result); //What is the output of the alert? 'Boolean'
+
+result = typeof typeof(str instanceof String);
+alert(result); //What is the output of the alert? 'String'
+
+result = typeof typeof typeof(str instanceof String);
+alert(result); //What is the output of the alert? 	'String'
+
+// 运算符
+/**
+ * 含有布尔操作符，会转换成布尔值
+ * x = true + (false, true), 括号优先级最高，逗号操作符得到，true
+ * x = true + true,因为有加号操作符，所以x = 1 + 1 -> 2，结果为2
+ */
+
+var x = !!"Hello" + (!"world", !!"from here!!");
+alert(x); // 2
+
+
+// JS声明前置相关问题
+// 会不会报错?
+var y = 10;
+
+if (!(x in window)) {
+    var x = 10; // var会提前到块级作用域的开始
+} else {
+    ++y;
+}
+
+alert(x); // undefined
+alert(y); // 11
+
+
+// 问题: ~的作用是什么? ~4的结果是多少？为什么?
+// ~: 转换成二进制数后，取反，负值再减去1，
+~4 //-5
+~12 //-13
