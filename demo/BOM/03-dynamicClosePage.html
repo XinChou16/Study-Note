@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态关闭页面</title>
+</head>
+<body>
+
+    <input type="button" value="关闭页面" id="close">
+    <script>
+        var shutdown = document.getElementById('close');// 取名close会与全局函数重名
+        
+        shutdown.addEventListener('click',function(){
+            window.close();
+            alert(1)
+        },false)
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网页自动跳转</title>
+</head>
+<body>
+    <p>2秒后跳转到百度</p>
+    <script>
+        var tip = document.getElementById('tip');
+        var btn = document.getElementById('btn');
+        
+        window.addEventListener('load',function(){
+            alert(1)
+           setTimeout(function(){
+              window.location.assign("./04-sumbitForm.html");
+           },2000)
+        },false)
+    </script>
+</body>
+</html>

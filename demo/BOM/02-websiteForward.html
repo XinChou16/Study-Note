@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网页前进后退</title>
+</head>
+<body>
+
+    <input type="button" value="前进" id="forwrad">
+    <input type="button" value="后退" id="back">
+    <script>
+        var forward = document.getElementById('forward');
+        var back = document.getElementById('back');
+        
+        forward.onclick = function(){
+            window.history.go(1);
+        }
+        back.onclick = function(){
+            window.history.go(-1);
+        }
+    </script>
+</body>
+</html>

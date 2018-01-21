@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提交表单重载页面</title>
+</head>
+<body>
+    <p id="tip" style="display:none">提交中，请等待...</p>
+    <input type="button" value="提交" id="btn">
+    <script>
+        var tip = document.getElementById('tip');
+        var btn = document.getElementById('btn');
+        
+        btn.addEventListener('click',function(){
+           tip.style.display = "block";
+           this.value = "提交中..."
+           setTimeout(function(){
+              window.location.reload();
+           },2000)
+        },false)
+    </script>
+</body>
+</html>
